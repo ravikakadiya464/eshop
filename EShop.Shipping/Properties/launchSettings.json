@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EShop.Shipping": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

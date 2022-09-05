@@ -1,0 +1,22 @@
+﻿version: "3.9"
+services:
+  product:
+    build:
+      context: .
+      dockerfile: EShop.Product/Dockerfile
+    container_name: product
+  shipping:
+    build:
+      context: .
+      dockerfile: EShop.Shipping/Dockerfile
+    container_name: shipping
+  apigateway:
+    build:
+      context: .
+      dockerfile: EShop.ApiGateway/Dockerfile
+    container_name: apigateway
+    depends_on:
+      - product
+      - shipping
+    ports:
+      - "5000:80"
